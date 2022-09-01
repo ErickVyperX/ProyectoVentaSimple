@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.StringJoiner;
 
 public class Order {
-    private int idOrder;
-    private Product[] products;
+    private final int idOrder;
+    private final Product[] products;
     private static int counterIdOrders;
     private static final int MAX_PRODUCTS = 10;
 
@@ -14,6 +14,7 @@ public class Order {
         this.products = new Product[Order.MAX_PRODUCTS];
     }
 
+    //Only 10 products maximum by Order
     public void addProduct(Product product) {
         for (int i = 0; i < MAX_PRODUCTS; i++) {
             if (this.products[i] == null) {
